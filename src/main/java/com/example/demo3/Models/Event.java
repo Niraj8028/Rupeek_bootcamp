@@ -17,6 +17,7 @@ public class Event {
     private String Date;
     private List<String> interest;
 
+
 //    public Event(long event_id, String eventName, String city, String date, List<String> interest) {
 //        //this.event_id = event_id;
 //        this.eventName = eventName;

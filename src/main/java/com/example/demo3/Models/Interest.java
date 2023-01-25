@@ -12,19 +12,17 @@ import java.util.List;
 @Document(collection="interests")
 public class Interest {
 //    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
+//    @Id
     private long id;
     private String interestName;
-
 
     public long getId() {
         return id;
     }
 
-    public Interest(long id, String interestName, List<Event> events) {
+    public Interest(long id, String interestName) {
         this.id = id;
         this.interestName = interestName;
-//        this.events = events;
     }
 
     public void setId(long id) {
@@ -38,10 +36,4 @@ public class Interest {
     public void setInterestName(String interestName) {
         this.interestName = interestName;
     }
-
-//    public List<Event> getEvents() {
-//        return events;
-//    }
-
-
 }

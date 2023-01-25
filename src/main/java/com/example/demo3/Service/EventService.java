@@ -32,4 +32,8 @@ public class EventService {
          List<Event>events=eventrepoObj.findByCityName(cityName);
          return events;
      }
+
+    public List<Event> findByInt(String interest) {
+        return eventrepoObj.findByInterestName(interest);
+    }
 }

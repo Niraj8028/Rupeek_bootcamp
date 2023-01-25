@@ -18,25 +18,19 @@ public class Users {
     private String email;
 //    @DBRef
     private List<String> interest;
+    private List<String> regEvents;
 
-    public List<String> getInterest() {
-        return interest;
+    public long getId() {
+        return id;
     }
 
-    public Users(long id, String firstName, String lastName, String email,List<String> interest) {
+    public Users(long id, String firstName, String lastName, String email, List<String> interest, List<String> regEvents) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.interest = interest;
-    }
-
-    public void setInterest(List<String>interest) {
-        this.interest = interest;
-    }
-
-    public long getId() {
-        return id;
+        this.regEvents = regEvents;
     }
 
     public void setId(long id) {
@@ -65,5 +59,21 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<String> getInterest() {
+        return interest;
+    }
+
+    public void setInterest(List<String> interest) {
+        this.interest = interest;
+    }
+
+    public List<String> getRegEvents() {
+        return regEvents;
+    }
+
+    public void setRegEvents(List<String> regEvents) {
+        this.regEvents = regEvents;
     }
 }

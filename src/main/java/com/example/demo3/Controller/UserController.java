@@ -1,5 +1,7 @@
 package com.example.demo3.Controller;
 
+import com.example.demo3.Models.Event;
+import com.example.demo3.Models.Interest;
 import com.example.demo3.Models.Users;
 import com.example.demo3.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,11 @@ public class UserController {
         return userServiceObj.Addinterest(userid,text);
     }
 
+    @PutMapping(path = "/register/event/{userid}/{event}")
+    public String RegisterEvent(@PathVariable Long userid,@PathVariable String event){
+        return userServiceObj.AddEvent(userid,event);
+    }
+
 
 
 
@@ -43,6 +50,18 @@ public class UserController {
     public String deleteUserById(@PathVariable Long userid ){
         userServiceObj.deleteUserByID(userid);
         return "user deleted succesfully";
+    }
+
+    @GetMapping(path = "/user/events/{userid}")
+    public List<Event> getRegisteredEvents(@PathVariable Long userid){
+        return userServiceObj.getRegEvents(userid);
+
+    }
+
+    @GetMapping(path = "/user/interests/{userid}")
+    public List<Interest> get(@PathVariable Long userid){
+        return userServiceObj.getInterests(userid);
+
     }
 
 }

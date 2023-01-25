@@ -21,11 +21,17 @@ public class EventController {
         eventServiceObj.addevent(event);
         return "Event added succesfully";
     }
-     @GetMapping(value = "/events/{city_name}")
+     @GetMapping(value = "/event/{city_name}")
      public List<Event>getEventByCity(@PathVariable String city_name){
         List<Event>events= eventServiceObj.findByCity(city_name);
         return events;
      }
+
+    @GetMapping(value = "/events/{interest}")
+    public List<Event>getEventByInt(@PathVariable String interest){
+        List<Event>events= eventServiceObj.findByInt(interest);
+        return events;
+    }
 
 
 }

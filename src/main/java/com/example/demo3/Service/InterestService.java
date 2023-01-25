@@ -16,13 +16,18 @@ public class InterestService {
 //        List<Interest>interests= interestRepoObj.findAll();
 //        return interests;
 //    }
+
+
     public List<Interest> getInterests() {
         return interestRepoObj.findAll();
     }
+
+
     public Optional<Interest> getByid(Long interestId) {
         Optional<Interest> interest=interestRepoObj.findById(interestId);
         return interest;
     }
+
     public void AddInterest(Interest interest) {
         interestRepoObj.save(interest);
     }
