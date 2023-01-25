@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class EventService {
@@ -34,6 +35,30 @@ public class EventService {
      }
 
     public List<Event> findByInt(String interest) {
-        return eventrepoObj.findByInterestName(interest);
+        List<Event> events=eventrepoObj.findAll();
+        List<Event> eventList=new ArrayList<>();
+        if (events!=null) {
+            for (Event i : events) {
+                List<String> inter = i.getInterest();
+                if (inter.contains(interest)) {
+                    eventList.add(i);
+                }
+            }
+        }
+        return eventList;
+    }
+
+    public List<Event> getAllEventInCityAndInterest(String city, String interest) {
+        List<Event> events=eventrepoObj.findByCityName(city);
+        List<Event> eventList=new ArrayList<>();
+        if (events!=null) {
+            for (Event i : events) {
+                List<String> inter = i.getInterest();
+                if (inter.contains(interest)) {
+                    eventList.add(i);
+                }
+            }
+        }
+        return eventList;
     }
 }
