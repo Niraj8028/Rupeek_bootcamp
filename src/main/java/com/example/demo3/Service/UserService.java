@@ -21,11 +21,25 @@ public class UserService {
         return user;
     }
 
+
+
     public List<Users> getAllUser() {
         return userRepoObj.findAll();
     }
 
     public void deleteUserByID(Long userid) {
         userRepoObj.deleteById(userid);
+    }
+
+    public String Addinterest(Long userid,String interestId) {
+        Optional<Users> user=userRepoObj.findById(userid);
+        if(user.isPresent()){
+            Users users=user.get();
+            List<String> list=users.getInterest();
+            list.add(interestId);
+            users.setInterest(list);
+            userRepoObj.save(users);
+        }
+        return "interest added successfully";
     }
 }

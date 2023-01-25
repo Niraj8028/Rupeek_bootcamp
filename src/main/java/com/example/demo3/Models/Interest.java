@@ -15,7 +15,7 @@ public class Interest {
     @Id
     private long id;
     private String interestName;
-    private List<Event> events;
+
 
     public long getId() {
         return id;
@@ -24,7 +24,7 @@ public class Interest {
     public Interest(long id, String interestName, List<Event> events) {
         this.id = id;
         this.interestName = interestName;
-        this.events = events;
+//        this.events = events;
     }
 
     public void setId(long id) {
@@ -39,11 +39,9 @@ public class Interest {
         this.interestName = interestName;
     }
 
-    public List<Event> getEvents() {
-        return events;
-    }
+//    public List<Event> getEvents() {
+//        return events;
+//    }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
-    }
+
 }

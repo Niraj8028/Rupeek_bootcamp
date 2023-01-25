@@ -25,6 +25,13 @@ public class UserController {
         Optional<Users> user=userServiceObj.getUserByID(userid);
         return user;
     }
+    @PutMapping(path = "/add/interest/{userid}/{text}")
+    public String addInterest(@PathVariable Long userid,@PathVariable String text){
+        return userServiceObj.Addinterest(userid,text);
+    }
+
+
+
 
     @GetMapping(path="/users")
     public List<Users> getUsers(){

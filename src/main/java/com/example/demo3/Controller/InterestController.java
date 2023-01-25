@@ -23,6 +23,8 @@ public class InterestController {
         return "interest added successfully";
     }
 
+
+
     @GetMapping(path = "/interest/{interest_id}")
     public Optional<Interest> getInterestById(@PathVariable Long interest_id){
         Optional<Interest> interest=interestserviceObj.getByid(interest_id);

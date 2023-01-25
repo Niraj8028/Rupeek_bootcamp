@@ -10,28 +10,28 @@ import java.util.List;
 @Document(collection="Events")
 public class Event {
 //    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
-    private long event_id;
+    //@Id
+    //private long event_id;
     private String eventName;
     private String city;
     private String Date;
     private List<String> interest;
 
-    public Event(long event_id, String eventName, String city, String date, List<String> interest) {
-        this.event_id = event_id;
-        this.eventName = eventName;
-        this.city = city;
-        Date = date;
-        this.interest = interest;
-    }
+//    public Event(long event_id, String eventName, String city, String date, List<String> interest) {
+//        //this.event_id = event_id;
+//        this.eventName = eventName;
+//        this.city = city;
+//        Date = date;
+//        this.interest = interest;
+//    }
 
-    public long getEvent_id() {
-        return event_id;
-    }
+//    public long getEvent_id() {
+//        return event_id;
+//    }
 
-    public void setEvent_id(long event_id) {
-        this.event_id = event_id;
-    }
+//    public void setEvent_id(long event_id) {
+//        this.event_id = event_id;
+//    }
 
     public String getEventName() {
         return eventName;
@@ -63,5 +63,16 @@ public class Event {
 
     public void setInterest(List<String> interest) {
         this.interest = interest;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+//                "event_id=" + event_id +
+                ", eventName='" + eventName + '\'' +
+                ", city='" + city + '\'' +
+                ", Date='" + Date + '\'' +
+                ", interest=" + interest +
+                '}';
     }
 }

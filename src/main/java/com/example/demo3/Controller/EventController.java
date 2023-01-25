@@ -12,9 +12,8 @@ public class EventController {
     EventService eventServiceObj;
 
     @GetMapping(value = "/events")
-    public List<Event>getAllEvents(){
-        List<Event>events= eventServiceObj.findallEvents();
-        return events;
+    public List<Event> getEvents(){
+        return eventServiceObj.getEvent();
     }
 
     @PostMapping(value = "/add/event")
@@ -22,11 +21,11 @@ public class EventController {
         eventServiceObj.addevent(event);
         return "Event added succesfully";
     }
-//    @GetMapping(value = "/events/{city_name}")
-//    public List<Event>getEventByCity(@PathVariable String city_name){
-//        List<Event>events= eventServiceObj.findByCity(city_name);
-//        return events;
-//    }
+     @GetMapping(value = "/events/{city_name}")
+     public List<Event>getEventByCity(@PathVariable String city_name){
+        List<Event>events= eventServiceObj.findByCity(city_name);
+        return events;
+     }
 
 
 }

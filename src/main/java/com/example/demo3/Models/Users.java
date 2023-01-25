@@ -11,7 +11,7 @@ import java.util.List;
 @Document(collection="users")
 public class Users {
 //    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
+//    @Id
     private long id;
     private String firstName;
     private String lastName;
