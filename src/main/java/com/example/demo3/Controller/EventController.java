@@ -28,10 +28,14 @@ public class EventController {
      }
 
     @GetMapping(value = "/events/{interest}")
-    public List<Event>getEventByInt(@PathVariable String interest){
-        List<Event>events= eventServiceObj.findByInt(interest);
+    public List<Event>getEventByInt(@PathVariable String interest) {
+        List<Event> events = eventServiceObj.findByInt(interest);
         return events;
     }
 
+    @GetMapping(value = "/event/{city}/{interest}")
+    public List<Event>getEventInCityAndInterest(@PathVariable String city,@PathVariable String interest){
+        return eventServiceObj.getAllEventInCityAndInterest(city,interest);
+    }
 
 }

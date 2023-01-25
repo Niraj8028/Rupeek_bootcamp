@@ -17,22 +17,12 @@ public class Event {
     private String Date;
     private List<String> interest;
 
-
-//    public Event(long event_id, String eventName, String city, String date, List<String> interest) {
-//        //this.event_id = event_id;
-//        this.eventName = eventName;
-//        this.city = city;
-//        Date = date;
-//        this.interest = interest;
-//    }
-
-//    public long getEvent_id() {
-//        return event_id;
-//    }
-
-//    public void setEvent_id(long event_id) {
-//        this.event_id = event_id;
-//    }
+    public Event(String eventName, String city, String Date, List<String> interest) {
+        this.eventName = eventName;
+        this.city = city;
+        this.Date = Date;
+        this.interest = interest;
+    }
 
     public String getEventName() {
         return eventName;
@@ -54,8 +44,8 @@ public class Event {
         return Date;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public void setDate(String Date) {
+        Date = Date;
     }
 
     public List<String> getInterest() {
@@ -64,16 +54,5 @@ public class Event {
 
     public void setInterest(List<String> interest) {
         this.interest = interest;
-    }
-
-    @Override
-    public String toString() {
-        return "Event{" +
-//                "event_id=" + event_id +
-                ", eventName='" + eventName + '\'' +
-                ", city='" + city + '\'' +
-                ", Date='" + Date + '\'' +
-                ", interest=" + interest +
-                '}';
     }
 }
