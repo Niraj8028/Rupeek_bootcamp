@@ -2,6 +2,7 @@ package com.example.demo3.Controller;
 
 import com.example.demo3.Models.Event;
 import com.example.demo3.Models.Interest;
+import com.example.demo3.Models.SignIn;
 import com.example.demo3.Models.Users;
 import com.example.demo3.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,18 @@ public class UserController {
 
     @Autowired
     UserService userServiceObj;
+
+
+    @PostMapping(path="/registerUser") /////////Add users to the database
+    public String addUserEnc(@RequestBody Users user){
+        userServiceObj.addUserEnc(user);
+        return "user added successfully";
+    }
+    @PostMapping("/signIn")
+    public String Authenticate(@RequestBody SignIn signInDetails)
+    {
+        return userServiceObj.Authenticate(signInDetails);
+    }
 
     @PostMapping(path="/add/user")
     public String addUser(@RequestBody Users user){
