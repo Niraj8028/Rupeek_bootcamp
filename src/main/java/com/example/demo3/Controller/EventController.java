@@ -3,7 +3,13 @@ package com.example.demo3.Controller;
 import com.example.demo3.Models.Event;
 import com.example.demo3.Service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 @RestController
@@ -37,5 +43,22 @@ public class EventController {
     public List<Event>getEventInCityAndInterest(@PathVariable String city,@PathVariable String interest){
         return eventServiceObj.getAllEventInCityAndInterest(city,interest);
     }
+
+     // EventBrite
+//     @Autowired
+//     RestTemplate restTemplate;
+//
+//
+//    @GetMapping("/eventbrite")
+//    public ResponseEntity<?> getEventBrite() {
+//        String url = "";
+//        String authorization = "";
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.add("Authorization", authorization);
+//        HttpEntity<String> req = new HttpEntity<String>(headers);
+//        ResponseEntity<Object> response = restTemplate.exchange(url, HttpMethod.GET, req, Object.class);
+//        return response;
+//    }
 
 }
